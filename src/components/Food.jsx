@@ -1,13 +1,36 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLoaderData, useNavigation } from 'react-router-dom';
+import Food_Card from './Food_Card';
+import BarLoader from "react-spinners/BarLoader";
+import BounceLoader from "react-spinners/BounceLoader";
 
 const Food = () => {
-    const loader = useLoaderData() ;
-    console.log(loader);
+    const [loading, setLoading] = useState(false);
+    setTimeout(() => {
+        setLoading(true);
+    }, 5000);
+    const data = useLoaderData();
+    const navigation = useNavigation();
     return (
-        <div>
-            <h1>Hello From Food</h1>
-        </div>
+    navigation.state === 'loading' ? <div className="flex justify-center items-center h-screen">
+            <BarLoader
+                color="#36d7b7"
+                cssOverride={{}}
+                height={10}
+                width='200px'
+            />
+        </div> :
+            <div className="">
+                <h1 className='text-5xl font-bold text-center py-5'>Your Food</h1>
+                <p className="text-3xl text-center">{navigation.state}</p>
+                <div className='grid  md:grid-cols-2 gap-6 justify-items-center lg:grid-cols-3'>
+                    {
+                        data?.map(meal => <Food_Card meal={meal} key={meal.idMeal} />)
+                    }
+                </div>
+
+            </div>
+            // <h1>Hello </h1>
     );
 };
 

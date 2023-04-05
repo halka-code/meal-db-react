@@ -6,6 +6,9 @@ import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 import Home from './components/Home';
 import ErrorPage from './components/ErrorPage';
 import Food from './components/Food';
+import UseApi from './HandelApi';
+// import { dataApi } from './HandelApi'; 
+// console.log(()=>UseApi);
 const router = createBrowserRouter([
   {
     path: '/',
@@ -21,9 +24,9 @@ const router = createBrowserRouter([
         element: <div>About</div>,
       },
       {
-        path:'food',
+        path:'food/:search',
         element: <Food/>,
-        loader:()=> fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=fish') 
+        loader:async ({ params }) => UseApi(params.search)
       }
     ]
   }
