@@ -6,13 +6,13 @@ const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     return (
-        <div className='flex relative justify-between py-3'>
+        <div className='flex relative w-[90%] mx-auto justify-between py-3'>
             <div className="logo-part">
                 <h1 className='text-4xl font-semibold btn btn-ghost'>Ti-Food</h1>
             </div>
             <div className=''>
                 {/* <ul className="md:flex hidden items-center gap-5"> */}
-                <ul className={`md:flex items-center gap-5 duration-500 ${isOpen ? 'absolute right-6 top-14 flex flex-col justify-center' : 'absolute right-6 -top-44 md:top-4'}`}>
+                <ul className={`md:flex text-white bg-blue-500 md:bg-transparent md:text-black selection: items-center gap-5 duration-500 ${isOpen ? 'absolute right-6 top-14 flex flex-col justify-center' : 'absolute right-6 -top-44 md:top-4'}`}>
                     <li className='text-[18px] font-semibold'><NavLink to='/'>Home</NavLink></li>
                     <li className='text-[18px] font-semibold'><NavLink to='/about'>About Us</NavLink></li>
                     <li className='text-[18px] font-semibold'><NavLink to='/food'>View Food</NavLink></li>

@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated text</title>
+    <style>
+        .color-change {
+            font-size: 1.3em;
+            animation: color-change 10s infinite ;
+        }
+        @keyframes color-change {
+            0% {
+                color: red;
+            }
+            20% {
+                color: orange;
+            }
+            40% {
+                color: yellow;
+            }
+            60% {
+                color: green;
+            }
+            70% {
+                color: blue;
+            }
+            80% {
+                color: indigo;
+            }
+            100% {
+                color: green;
+            }
+        }   
+    </style>
+</head>
+<body>
+    <div class="color-change">
+        <h1>Hello, World!</h1>
+      </div>      
+</body>
+</html>

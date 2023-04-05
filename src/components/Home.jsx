@@ -3,7 +3,7 @@ import React from 'react';
 const Home = () => {
     return (
         <div>
-            <div className="hero min-h-screen" style={{ backgroundImage: ` url("https://img.freepik.com/free-photo/chicken-skewers-with-slices-sweet-peppers-dill_2829-18813.jpg?size=626&ext=jpg&ga=GA1.1.311873990.1672666843&semt=sph")` }}>
+            <div className="hero h-[100vh]" style={{ backgroundImage: ` url("https://img.freepik.com/free-photo/chicken-skewers-with-slices-sweet-peppers-dill_2829-18813.jpg?size=626&ext=jpg&ga=GA1.1.311873990.1672666843&semt=sph")` }}>
                 <div className="hero-overlay bg-black bg-opacity-[0.6]"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
