@@ -5,14 +5,21 @@ import BarLoader from "react-spinners/BarLoader";
 import BounceLoader from "react-spinners/BounceLoader";
 
 const Food = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     setTimeout(() => {
-        setLoading(true);
-    }, 5000);
+        setLoading(false);
+    }, 3000);
     const data = useLoaderData();
     const navigation = useNavigation();
     return (
-    navigation.state === 'loading' ? <div className="flex justify-center items-center h-screen">
+        loading ?
+        <div className="flex justify-center items-center h-screen">
+            <BounceLoader
+                color="#36d7b7"
+                size={101}
+            />
+        </div> : 
+            navigation.state === 'loading' ? <div className="flex justify-center items-center h-screen">
             <BarLoader
                 color="#36d7b7"
                 cssOverride={{}}
@@ -30,7 +37,7 @@ const Food = () => {
                 </div>
 
             </div>
-            // <h1>Hello </h1>
+        // <h1>Hello </h1>
     );
 };
 
